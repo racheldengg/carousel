@@ -1,2 +1,2 @@
-# carousel
+# 3D-Carousel
 Created with CodeSandbox
