@@ -2,8 +2,9 @@ import Styles from "./Card.module.css";
 import React, { useState } from "react";
 import { useSpring, animated } from "react-spring";
 import Button from "./Button";
+import Popup from "./Popup";
 
-function Card({ imagen }) {
+function Card({ imagen, title, popupOpen, popupClose }) {
   const [show, setShown] = useState(false);
 
   const props3 = useSpring({
@@ -12,6 +13,7 @@ function Card({ imagen }) {
       ? "0 20px 25px rgb(0 0 0 / 25%)"
       : "0 2px 10px rgb(0 0 0 / 8%)"
   });
+
   return (
     <animated.div
       className={Styles.card}
@@ -20,7 +22,7 @@ function Card({ imagen }) {
       onMouseLeave={() => setShown(false)}
     >
       <img src={imagen} alt="" />
-      <h2>Title</h2>
+      <h2>{title}</h2>
       <p>
         Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
         nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
@@ -30,6 +32,7 @@ function Card({ imagen }) {
         <Button text="Demo" />
         <Button text="Code" />
       </div>
+      {<Popup isOpen={popupOpen} onClose={popupClose}>This is a popup content for {title}</Popup>}
     </animated.div>
   );
 }
