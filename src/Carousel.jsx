@@ -2,66 +2,68 @@ import Carousel from "react-spring-3d-carousel";
 import { useState, useEffect } from "react";
 import { config } from "react-spring";
 import React from 'react'
+import Card from "./Card";
 
-export default function Carroussel(props, { closePopup }) {
-  const [popupIndex, setPopupIndex] = useState([true, false, false, false, false])
-  const table = props.cards.map((element, index) => {
-    return { ...element,
-      onClick: () => {
-        setGoToSlide(index);
-        setPopupIndex(prevPopupIndex => {
-          if (prevPopupIndex[index]) {
-            setCards((prevCards) => {
-              const newCards = [...prevCards]; // Create a copy of the state array
-              newCards[index] = {
-                ...newCards[index], // Create a copy of the specific card object
-                content: {
-                  ...newCards[index].content, // Create a copy of the content object
-                  props: {
-                    ...newCards[index].content.props, // Create a copy of the props object
-                    popupOpen: true // Update the popupOpen property
-                  }
-                }
-              };
-              // console.log(newCards)
-              return newCards;
-            });
-          }
-          var newPopupIndex = [false, false, false, false, false];
-          newPopupIndex[index] = true;
-          return newPopupIndex
-        });
-      },
-      customButtonClick: () => {
-        console.log(`Custom button clicked for card ${index}`);
-        handleCarouselFunction(); // Trigger the function in Carousel.jsx
-      }
-    };
-  });
-
-
+export default function Carroussel(props) {
+  var [popupIndex, setPopupIndex] = useState([false, false, false, false, false]);
   const [offsetRadius, setOffsetRadius] = useState(2);
   const [showArrows, setShowArrows] = useState(false);
+  const [popupSlide, setPopupSlide] = useState([true, false, false, false, false])
   const [goToSlide, setGoToSlide] = useState(null);
-  const [cards, setCards] = useState(table);
+  const [closePopup, setClosePopup] = useState(false)
+
+  
+  const handleCardClose = () => {
+  };
 
   useEffect(() => {
     setOffsetRadius(props.offset);
     setShowArrows(props.showArrows);
   }, [props.offset, props.showArrows]);
 
-
   return (
-    <div
-      style={{ width: props.width, height: props.height, margin: props.margin }}
-    >
+    <div style={{ width: props.width, height: props.height, margin: props.margin }}>
       <Carousel
-        slides={cards}
+        slides={props.cards.map((element, index) => ({
+          content: (
+            <Card
+              key={element.key}
+              imagen={element.content.props.imagen}
+              title={element.content.props.title}
+              popupOpen={popupIndex[index]}
+            />
+          ),
+          onClick: () => {
+              console.log('on click')
+
+              setGoToSlide(index);
+              setPopupIndex([false, false, false, false, false])// resets everything on new card so nothing pops up
+
+              if (popupIndex[index]) {
+                setPopupIndex([false, false, false, false, false])
+              } else {
+                if (popupSlide[index]) { // popup on the new slide on second click
+                  setPopupIndex((prevIndex) => {
+                    const newIndex = [false, false, false, false, false]
+                    newIndex[index] = true
+                    return newIndex
+                  })
+                }
+
+                setPopupSlide((previousSlide) => { // sets the slide that can be popped up
+                  const newSlide = [false, false, false, false, false];
+                  newSlide[index] = true;
+                  return newSlide
+                })
+              }        
+          },
+
+
+        }))}
         goToSlide={goToSlide}
         offsetRadius={offsetRadius}
         showNavigation={showArrows}
         animationConfig={config.gentle}
-        closePopup={closePopup}
       />
     </div>
   );

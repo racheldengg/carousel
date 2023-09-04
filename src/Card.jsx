@@ -4,7 +4,7 @@ import { useSpring, animated } from "react-spring";
 import Button from "./Button";
 import Popup from "./Popup";
 
-function Card({ imagen, title, popupOpen, popupClose }) {
+function Card({ imagen, title, popupOpen }) {
   const [show, setShown] = useState(false);
 
   const props3 = useSpring({
@@ -32,7 +32,7 @@ function Card({ imagen, title, popupOpen, popupClose }) {
         <Button text="Demo" />
         <Button text="Code" />
       </div>
-      {<Popup isOpen={popupOpen} onClose={popupClose}>This is a popup content for {title}</Popup>}
+      {<Popup isOpen={popupOpen} >This is a popup content for {title}</Popup>}
     </animated.div>
   );
 }
