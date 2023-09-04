@@ -28,11 +28,27 @@ function Card({ imagen, title, popupOpen }) {
         nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
         volutpat.
       </p>
-      <div className={Styles.btnn}>
-        <Button text="Demo" />
-        <Button text="Code" />
-      </div>
-      {<Popup isOpen={popupOpen} >This is a popup content for {title}</Popup>}
+      {<Popup isOpen={popupOpen} >This is a popup content for {title} fjkdsla;jf;lsahg;lajfdl; fjdsaklfjdsa;l fjdskal;fjdskal; jdfskal;fjdks;ajfdksagjfds;ajg;sajfl;dsjal;k ghsal;fjdsal;kgha;jfdlk;sajlk; htla;jfuwi;eahfo;iwahnui;fjdsal;fjdsl;kajg jfdksla;fjk;dsla 
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+        <body> fjdsail;gha;ljfl;dsajflksjda </body>
+
+      </Popup>}
     </animated.div>
   );
 }
