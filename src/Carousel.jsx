@@ -34,6 +34,7 @@ export default function Carroussel(props) {
               imagen={element.content.props.imagen}
               title={element.content.props.title}
               popupOpen={popupIndex[index]}
+              summary={element.content.props.summary}
             />
           ),
           onClick: () => {

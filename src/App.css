@@ -21,7 +21,7 @@
 }
 
 .main-left {
-  padding-top: 30px;
+  padding-top: 90px;
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -32,7 +32,7 @@
 .main-right {
   display: flex;
   flex-direction: column;
-  margin-right: -10%;
+  margin-right: -8%;
   height: 100vh;
 }
 
@@ -77,21 +77,21 @@ body {
 .animated-text {
   color: rgb(197, 153, 206);
   font-family: 'Raleway', sans-serif;
-  font-size: 48px;
   position: relative; /* Add position relative to enable absolute positioning */
 }
 
 .animated-text:hover {
-  color: white;
+  color: rgb(204, 207, 194);
   top: -10px; /* Move the text up by 10 pixels on hover */
   cursor: pointer;
-  transition: top 0.2s ease-in-out; /* Add a transition for the top property */
+  transition: top 5s ease-in-out; /* Add a transition for the top property */
 }
 
 .header {
   margin-left: 5%;
   margin-bottom: 5%;
-  margin-top: 3%
+  margin-top: 3%;
+  font-size: 48px;
 }
 
 .pfp {

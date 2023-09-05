@@ -7,8 +7,22 @@ import Popup from "./Popup";
 // import { getPopupIndex } from "./Carousel";
 import Pfp from "./Pfp";
 import Icon from "./icons";
-import { FaLinkedinIn, FaGithub } from 'react-icons/fa';
-import { BiLogoGmail } from 'react-icons/bi'
+import {
+  FaLinkedinIn,
+  FaGithub,
+  FaReact, 
+  FaNodeJs,
+  FaHtml5,
+  FaCss3,
+  FaPython,
+} from "react-icons/fa";
+import { 
+  BiLogoGmail, 
+  BiLogoMongodb
+} from 'react-icons/bi';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faC } from '@fortawesome/free-solid-svg-icons';
+import { faJira } from '@fortawesome/free-brands-svg-icons';
 import EnlargingText from "./EnlargeText";
 
 
@@ -17,31 +31,68 @@ function App(props) {
       {
         key: uuidv4(),
         content: (
-          <Card imagen="https://updates.theme-fusion.com/wp-content/uploads/2017/12/convertplus_thumbnail.jpg" title="0" popupOpen={null}/>
+          <Card 
+            imagen={"https://updates.theme-fusion.com/wp-content/uploads/2017/12/convertplus_thumbnail.jpg"}
+            title={"Projects!" }
+            popupOpen={null}
+            summary={
+              <>
+                <span style={{ fontSize: "20px", fontFamily: "Raleway" }}>Currently exploring full-stack development, machine learning, and algorithmic design </span>{" "}
+                <div style={{ fontSize: "20px", fontFamily: "Raleway" }}>Technologies I frequent:</div>{" "}
+                <FaReact style={{ fontSize: "28px", marginBottom: "-5px", paddingLeft:"3px" }} />
+                <FaNodeJs style={{ fontSize: "28px", marginBottom: "-5px", paddingLeft:"3px" }} />
+                <FaHtml5 style={{ fontSize: "28px", marginBottom: "-5px", paddingLeft:"3px" }} />
+                <FaCss3 style={{ fontSize: "28px", marginBottom: "-5px", paddingLeft:"3px" }} />
+                <FaPython style={{ fontSize: "28px", marginBottom: "-5px", paddingLeft:"3px" }} />
+                <BiLogoMongodb style={{ fontSize: "28px", marginBottom: "-5px", paddingLeft:"3px" }} />
+                <FontAwesomeIcon icon={faJira} fontSize="28x" marginBottom="-5px" paddingLeft="3px" />
+
+              </>
+            }
+            />
         )
       },
       {
         key: uuidv4(),
         content: (
-          <Card imagen="https://updates.theme-fusion.com/wp-content/uploads/2017/12/acf_pro.png" title='1' popupOpen={null}/>
+          <Card 
+            imagen="https://updates.theme-fusion.com/wp-content/uploads/2017/12/acf_pro.png" 
+            title='1' 
+            popupOpen={null}
+            summary="Sloth does so many projects, including eating the potato and pooping out a potato and giving birth to potatoes" 
+            />
         )
       },
       {
         key: uuidv4(),
         content: (
-          <Card imagen="https://updates.theme-fusion.com/wp-content/uploads/2017/12/layer_slider_plugin_thumb.png" title='2' popupOpen={null}/>
+          <Card 
+            imagen="https://updates.theme-fusion.com/wp-content/uploads/2017/12/layer_slider_plugin_thumb.png"
+            title='2' 
+            popupOpen={null}
+            summary="Sloth does so many projects, including eating the potato and pooping out a potato and giving birth to potatoes" />
         )
       },
       {
         key: uuidv4(),
         content: (
-          <Card imagen="https://updates.theme-fusion.com/wp-content/uploads/2016/08/slider_revolution-1.png" title='3' popupOpen={null}/>
+          <Card 
+            imagen="https://updates.theme-fusion.com/wp-content/uploads/2016/08/slider_revolution-1.png"
+            title='3'
+            popupOpen={null}
+            summary='Sloth does so many projects, including eating the potato and pooping out a potato and giving birth to potatoes'
+            />
         )
       },
       {
         key: uuidv4(),
         content: (
-          <Card imagen="https://updates.theme-fusion.com/wp-content/uploads/2019/01/pwa_880_660.jpg" title='4' popupOpen={null}/>
+          <Card 
+            imagen="https://updates.theme-fusion.com/wp-content/uploads/2019/01/pwa_880_660.jpg"
+            title='4'
+            popupOpen={null}
+            summary='Sloth does so many projects, including eating the potato and pooping out a potato and giving birth to potatoes'
+            />
         )
       }
     ];
@@ -78,9 +129,6 @@ function App(props) {
         <span className="animated-text">u</span>
         <span className="animated-text">&nbsp;</span>
         <span className="animated-text">:)</span>
-        <div id="header-trick">
-          (hover over the purple font!)
-        </div>
       </h1>
       <div className="pfpandabout"> 
           <Pfp className="pfp"/>
