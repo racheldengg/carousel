@@ -5,3 +5,96 @@
   align-items: center;
   height: 100vh;
 }
+
+#header-trick{
+  color:rgb(204, 207, 194);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 8;
+}
+
+
+.main {
+  display: grid;
+  grid-template-columns: min-content 600px;
+  height: 100vh;
+  width: 100vw;
+}
+
+.main-left {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 700px;
+  margin-left: 0%;
+}
+
+.main-right {
+  display: flex;
+  flex-direction: column;
+  margin-right: -10%;
+  height: 100vh;
+}
+
+spacer{
+  height: 50px;
+}
+
+body {
+  background-color: rgb(50, 50, 56);
+}
+
+#aboutme {
+  margin-left: 10%;
+  margin-top: 2.5%;
+  /* margin-right: 30%; */
+  color: rgb(204, 207, 194);
+  font-family: 'Raleway', sans-serif;
+  font-weight: 8;
+  
+}
+.highlight {
+  color: rgb(197, 153, 206);
+}
+
+.pfpandabout {
+  margin-top: -6%;
+  margin-left: -1%;
+}
+
+.icons {
+  display: flex;
+  margin-top: 1%;
+  margin-left: 10%;
+}
+
+.main{
+  margin-top: -1%;
+  margin-left: 2%;
+  position: absolute;
+}
+
+.animated-text {
+  color: rgb(197, 153, 206);
+  font-family: 'Raleway', sans-serif;
+  font-size: 48px;
+  position: relative; /* Add position relative to enable absolute positioning */
+}
+
+.animated-text:hover {
+  color: white;
+  top: -10px; /* Move the text up by 10 pixels on hover */
+  cursor: pointer;
+  transition: top 0.2s ease-in-out; /* Add a transition for the top property */
+}
+
+.header {
+  margin-left: 5%;
+  margin-bottom: 5%;
+  margin-top: 3%
+}
+
+.pfp {
+  margin-right: 50%;
+}
+

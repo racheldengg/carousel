@@ -7,15 +7,12 @@ import Card from "./Card";
 
 export default function Carroussel(props) {
   var [popupIndex, setPopupIndex] = useState([false, false, false, false, false]);
-  const [offsetRadius, setOffsetRadius] = useState(2);
+  const [offsetRadius, setOffsetRadius] = useState(5);
   const [showArrows, setShowArrows] = useState(false);
   const [popupSlide, setPopupSlide] = useState([true, false, false, false, false])
   const [goToSlide, setGoToSlide] = useState(null);
   const [closePopup, setClosePopup] = useState(false)
 
-  
-  const handleCardClose = () => {
-  };
 
   useEffect(() => {
     setOffsetRadius(props.offset);
@@ -25,7 +22,11 @@ export default function Carroussel(props) {
   return (
     <div className = {Styles.Carousel} style={{width: props.width, height: props.height, margin: props.margin }}>
       <Carousel
-        
+        goToSlide={goToSlide}
+        offsetRadius={offsetRadius}
+        showNavigation={showArrows}
+        animationConfig={config.gentle}
+
         slides={props.cards.map((element, index) => ({
           content: (
             <Card
@@ -36,7 +37,6 @@ export default function Carroussel(props) {
             />
           ),
           onClick: () => {
-              console.log('on click')
 
               setGoToSlide(index);
               setPopupIndex([false, false, false, false, false])// resets everything on new card so nothing pops up
@@ -59,13 +59,8 @@ export default function Carroussel(props) {
                 })
               }        
           },
-
-
-        }))}
-        goToSlide={goToSlide}
-        offsetRadius={offsetRadius}
-        showNavigation={showArrows}
-        animationConfig={config.gentle}
+        }
+        ))}
       />
     </div>
   );
